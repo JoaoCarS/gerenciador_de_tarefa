@@ -28,7 +28,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     'localhost',
-    'gerenciador_de_tarefa.onrender.com',
+    'gerenciador-de-tarefa-rrd5.onrender.com',
 ]
 
 
