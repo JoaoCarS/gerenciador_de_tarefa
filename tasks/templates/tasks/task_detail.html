@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}{{ task.title }} | TaskFlow{% endblock %}
+
+{% block content %}
+<div class="card shadow-sm">
+    <div class="card-body p-4">
+        <h1 class="h3">{{ task.title }}</h1>
+
+        <p>{{ task.description|default:"Sem descrição" }}</p>
+
+        <p>
+            <strong>Status:</strong>
+            {{ task.get_status_display }}
+        </p>
+
+        <p>
+            <strong>Prioridade:</strong>
+            {{ task.get_priority_display }}
+        </p>
+
+        <p>
+            <strong>Prazo:</strong>
+            {{ task.due_date|default:"Não definido" }}
+        </p>
+
+        <a href="{% url 'task_update' task.pk %}"
+           class="btn btn-primary">
+            Editar
+        </a>
+
+        <a href="{% url 'task_list' %}"
+           class="btn btn-outline-secondary">
+            Voltar
+        </a>
+    </div>
+</div>
+{% endblock %}
